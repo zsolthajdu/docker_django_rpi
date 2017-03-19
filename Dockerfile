@@ -29,8 +29,8 @@ RUN pip3 install django
 #install MySQL in noninteractive way
 RUN export DEBIAN_FRONTEND=noninteractive
 
-#RUN apt-get install -qy python3-dev
-#RUN apt-get install -qy libmysqlclient-dev
+RUN apt-get install -qy python3-dev
+RUN apt-get install -qy libmysqlclient-dev
 
 RUN pip3 install pymysql mysqlclient
 
