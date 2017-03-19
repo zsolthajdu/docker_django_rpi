@@ -1,0 +1,20 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+script:
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+# Build image
+  - docker build -t  algoretum/django_rpi .
+# Test image
+  - docker run algoretum/django_rpi python3 --version
+
+# Push image
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push algoretum/django_rpi;
+    fi
+
