@@ -1,6 +1,7 @@
 #################################################
 # Dockerfile to build Python-Django WSGI Application Containers
-# Based on 
+# for Raspberry Pi
+# Based on Raspbian Jessie
 #
 
 # Set the base image to Ubuntu
@@ -11,6 +12,7 @@ MAINTAINER z_hajdu@yahoo.com
 
 # Update the sources list
 RUN apt-get update
+RUN apt-get install build-essential
 
 # Install basic applications
 RUN apt-get install -y aptitude apt-utils apache2  libapache2-mod-wsgi-py3
@@ -29,6 +31,7 @@ RUN pip3 install django
 #install MySQL in noninteractive way
 RUN export DEBIAN_FRONTEND=noninteractive
 
+RUN apt-get install -qy -t jessie python-dev
 RUN apt-get install -qy python3-dev
 RUN apt-get install -qy libmysqlclient-dev
 
