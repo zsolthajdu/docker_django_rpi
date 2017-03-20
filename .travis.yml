@@ -13,8 +13,9 @@ script:
   - docker run algoretum/django_rpi python3 --version
 
 # Push image
-  - if [ "$TRAVIS_BRANCH" == "master" ] && ["$TRAVIS_PULL_REQUEST" == "false" ]; then
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    docker push algoretum/django_rpi
+  - >
+    if [ "$TRAVIS_BRANCH" == "master" ] && ["$TRAVIS_PULL_REQUEST" == "false" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      docker push algoretum/django_rpi
     fi
 
