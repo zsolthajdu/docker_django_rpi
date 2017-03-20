@@ -26,7 +26,9 @@ RUN apt-get install -y python3-pip
 
 # Get pip to download and install requirements:
 
-RUN pip3 install django 
+RUN pip3 install django==1.10
+ENV DJANGO_VER 110
+ENV PYTHON_VER 34
 
 #install MySQL in noninteractive way
 RUN export DEBIAN_FRONTEND=noninteractive
