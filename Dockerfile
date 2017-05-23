@@ -7,9 +7,8 @@
 # Set the base image to Ubuntu
 FROM resin/rpi-raspbian:jessie
 
-# File Author / Maintainer
-MAINTAINER z_hajdu@yahoo.com
-
+ENV DJANGO_VER 111
+ENV PYTHON_VER 34
 
 # The path where the django app is stored
 ENV APP_PATH /usr/src/app
@@ -27,24 +26,19 @@ RUN apt-get install -y aptitude apt-utils apache2  libapache2-mod-wsgi-py3
 # Install Python and Basic Python Tools
 RUN apt-get install -y python3 wget
 
-RUN apt-get install -y python3-pip
+RUN apt-get install -y python3-pip python3-lxml
 
 #RUN pip install --upgrade pip
-
-# Get pip to download and install requirements:
-
-RUN pip3 install django==1.10
-ENV DJANGO_VER 110
-ENV PYTHON_VER 34
 
 #install MySQL in noninteractive way
 RUN export DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install -qy -t jessie python-dev
-RUN apt-get install -qy python3-dev
+RUN apt-get install -qy -t jessie python-dev python3-dev
 RUN apt-get install -qy libmysqlclient-dev
 
-RUN pip3 install pymysql mysqlclient
+COPY requirements.txt /
+# Get pip to download and install requirements:
+RUN pip3 install -r /requirements.txt
 
 COPY start.sh /
 RUN chmod a+x /start.sh
