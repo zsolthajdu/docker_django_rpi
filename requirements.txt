@@ -1,8 +1,10 @@
 
 django==1.11
 djangorestframework
+django-filter
 coreapi
 beautifulsoup4
+lxml
 pymysql
 mysqlclient
 

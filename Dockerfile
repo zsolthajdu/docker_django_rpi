@@ -26,7 +26,7 @@ RUN apt-get install -y aptitude apt-utils apache2  libapache2-mod-wsgi-py3
 # Install Python and Basic Python Tools
 RUN apt-get install -y python3 wget
 
-RUN apt-get install -y python3-pip python3-lxml
+RUN apt-get install -y python3-pip python3-lxml vim
 
 #RUN pip install --upgrade pip
 
