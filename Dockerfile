@@ -59,8 +59,7 @@ echo " </Files>" >> /etc/apache2/apache2.conf && \
 echo "</Directory>" >> /etc/apache2/apache2.conf && \
 echo "<Directory /usr/src/app/static/>" >> /etc/apache2/apache2.conf &&  \
 echo "  Require all granted" >> /etc/apache2/apache2.conf && \
-echo "</Directory>" >> /etc/apache2/apache2.conf
-
+echo "</Directory>" >> /etc/apache2/apache2.conf \
 echo "WSGIPassAuthorization  On" >> /etc/apache2/mods-enabled/wsgi.conf
 
 ENTRYPOINT ["/start.sh"]
