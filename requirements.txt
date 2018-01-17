@@ -3,7 +3,9 @@ django==1.11
 djangorestframework
 django-filter
 coreapi
+beautifulsoup4
 lxml
+python-memcached
 pymysql
 mysqlclient
 django-tagging
@@ -11,4 +13,5 @@ markdown
 django-cors-headers
 django-crispy-forms
 django-guardian
+requests
 
