@@ -7,7 +7,7 @@
 # Set the base image to Ubuntu
 FROM resin/rpi-raspbian:jessie
 
-ENV DJANGO_VER 111
+ENV DJANGO_VER 203
 ENV PYTHON_VER 34
 
 # The path where the django app is stored
