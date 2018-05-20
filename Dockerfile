@@ -8,7 +8,7 @@
 FROM resin/rpi-raspbian:jessie
 
 ENV DJANGO_VER 203
-ENV PYTHON_VER 34
+ENV PYTHON_VER 35
 
 # The path where the django app is stored
 ENV APP_PATH /usr/src/app
