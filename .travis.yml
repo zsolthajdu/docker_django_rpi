@@ -16,7 +16,7 @@ script:
   - >
     if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" ;
-    TAG=Stretch_$(grep "ENV PYTHON_VER" Dockerfile | awk '{print $3}') ;
+    TAG=$(grep "ENV PYTHON_VER" Dockerfile | awk '{print $3}') ;
     docker tag algoretum/django_rpi algoretum/django_rpi:$TAG ;
     docker push algoretum/django_rpi:$TAG ;
     docker push algoretum/django_rpi  ;
