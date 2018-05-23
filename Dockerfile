@@ -5,7 +5,7 @@
 #
 
 # Set the base image to Ubuntu
-FROM resin/rpi-raspbian:jessie
+FROM resin/rpi-raspbian:stretch
 
 ENV DJANGO_VER 203
 ENV PYTHON_VER 35
@@ -33,7 +33,7 @@ RUN apt-get install -y python3-pip python3-lxml vim
 #install MySQL in noninteractive way
 RUN export DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install -qy -t jessie python-dev python3-dev
+RUN apt-get install -qy -t stretch python-dev python3-dev
 RUN apt-get install -qy libmysqlclient-dev
 
 COPY requirements.txt /
