@@ -34,7 +34,7 @@ RUN apt-get install -y python3-pip python3-lxml vim
 RUN export DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get install -qy -t stretch python-dev python3-dev
-RUN apt-get install -qy libmysqlclient-dev
+RUN apt-get install -qy default-libmysqlclient-dev
 
 COPY requirements.txt /
 # Get pip to download and install requirements:
