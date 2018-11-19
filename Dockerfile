@@ -1,13 +1,13 @@
 #################################################
 # Dockerfile to build Python-Django WSGI Application Containers
 # for Raspberry Pi
-# Based on Raspbian Jessie
+# Based on Raspbian Stretch
 #
 
 # Set the base image to Ubuntu
 FROM resin/rpi-raspbian:stretch
 
-ENV DJANGO_VER 203
+ENV DJANGO_VER 208
 ENV PYTHON_VER 35
 
 # The path where the django app is stored
