@@ -1,5 +1,5 @@
 
-django==2.0.8
+django==3.2.19
 djangorestframework
 django-filter
 coreapi
